@@ -11,18 +11,16 @@ github_repo: "https://github.com/Los-GTI/Los-GTI.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Choice and effort are equally important!"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     秦闯闯微博
-zhihu_username:     qinchong
+weibo_username:     秦闯闯微博
+zhihu_username:     秦冲
 github_username:    Los-GTI
-facebook_username:  qinchong
-jianshu_username:   qinchong
 #twitter_username:   qinchong
 
 
@@ -93,13 +91,7 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
+  {
         title: "Apple",
         href: "https://apple.com"
     },{
