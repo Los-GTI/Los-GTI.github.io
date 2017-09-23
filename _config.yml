@@ -12,7 +12,7 @@ github_repo: "https://github.com/Los-GTI/Los-GTI.github.io.git" # you code repos
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Choice and effort are equally important!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/DSC00912.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
