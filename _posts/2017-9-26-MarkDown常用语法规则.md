@@ -1,15 +1,14 @@
-| ---  |                                      |
-| ---- | ------------------------------------ |
-|      | layout:     post                     |
-|      | title:      MarkDown语法的简要规则          |
-|      | subtitle:   MarkDown语法中比较常用的语法规则     |
-|      | date:       2017-09-26               |
-|      | author:     QC                       |
-|      | header-img: img/post-bg-ios9-web.jpg |
-|      | catalog: true                        |
-|      | tags:                                |
-|      | - MarkDown                           |
-|      | ---                                  |
+---
+layout:     post                   
+title:      MarkDown常用语法规则 
+subtitle:   MarkDown常用指令
+date:       2017-09-26              
+author:     QC                      
+header-img: img/post-bg-2015.jpg    
+catalog: true                       # 是否归档
+tags:                               #标签
+    - MarkDown
+--- 
 >MarkDown语法中常用的指令
 
 1. 标题
