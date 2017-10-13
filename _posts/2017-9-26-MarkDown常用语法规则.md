@@ -1,6 +1,6 @@
 ---
 layout:     post                   
-title:      MarkDown常用语法规则 
+title: MarkDown常用语法规则 
 subtitle:   MarkDown常用指令
 date:       2017-09-26              
 author:     QC                      
