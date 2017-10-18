@@ -1,15 +1,14 @@
 ---
-layout: post                   
-title: spring注解详解
-subtitle: @controller、@RequestingMapping详解
-date: 2017-10-18              
-author:   QC                      
-header-img: img/post-bg-2015.jpg    
-catalog: true                       
-tags:                             
-    - Controller
-    -RequestMapping
---- 
+layout:     post
+title:      spring注解
+subtitle:   @controller、@RequestMapping
+date:       2017-10-18
+author:     QC
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Controller
+---
 
 ### spring注解` @controller、@RequestMapping`详解
 
