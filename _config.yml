@@ -92,10 +92,10 @@ service-worker: true
 # Friends
 friends: [
   {
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Baidu",
+        href: "https://www.baidu.com/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "HUPU JRS",
+        href: "https://www.hupu.com/"
     }
 ]
