@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      spring注解
+title: spring注解
 subtitle:   @controller、@RequestMapping
 date:       2017-10-18
 author:     QC
