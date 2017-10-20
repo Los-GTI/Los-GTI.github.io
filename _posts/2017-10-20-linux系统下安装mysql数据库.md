@@ -21,7 +21,7 @@ MySQL是Oracle公司的一种开放源代码的关系型数据库系统，被广
 
 打开“终端窗口”，输入“sudo apt-get update” --> "回车" --> "输入root用户的密码" -->"回车"，就可以了。如果不运行该命令直接安装mysql可能会导致mysql的一些包无法下载，导致安装失败。
 
-![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/installMysql1.png) 
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/installMysql1.png)
 
 ##### 2.2 安装mysql
 
