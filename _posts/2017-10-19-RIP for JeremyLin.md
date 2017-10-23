@@ -7,7 +7,7 @@ author:     QC
 header-img: img/Lin2.jpeg
 catalog: true
 tags:
-    - Git
+    - Lin
 ---
 
 >2017-10-19 篮网第一场常规赛，Lin在一次上篮中倒地，膝盖扭伤，表情痛苦。
