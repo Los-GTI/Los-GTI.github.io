@@ -9,7 +9,8 @@ catalog: true
 tags:
     - JAVA_HOME
 ---
-#### Ubuntu系统下配置jdk和Java环境变量![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/java环境测试2.png) 
+#### Ubuntu系统下配置jdk和Java环境变量
+
 > 系统：Ubuntu14.0.4
 ##### 1.安装jdk配置环境变量
 先从Oracle官网下载JDK。先选择同意按钮，然后根据自己的系统下载相应版本。我的系统是Ubuntu14.04 64位的，所以我下载
