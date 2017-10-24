@@ -4,7 +4,7 @@ title:      Ubuntu系统配置Java环境变量
 subtitle:   Ubuntu系统版本:14.0.1
 date:       2017-10-24
 author:     QC
-header-img: img/timg11.jpg
+header-img: img/timg12.jpg
 catalog: true
 tags:
     - JAVA_HOME
