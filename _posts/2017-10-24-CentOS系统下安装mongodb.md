@@ -16,7 +16,7 @@ tags:
 
 打开终端输入：cd  /etc/yum.repos.d/，查看自己的机器中的yum源中有没有包含mongodb的相关资源，我机器中的yum源信息如下图，没有mongodb的相关资源。
 
-![是否mongodb相关资源](F:\typora_md\CentOS系统安装mongodb\是否mongodb相关资源.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/是否mongodb相关资源.png)
 
 所以要在使用yum命令安装mongodb前增加yum源，也就是在 /etc/yum.repos.d/目录中增加 *.repo yum源配置文件，以下是针对centos 64位系统的MongoDB yum 源配置内容(32位系统略有不同)：  
 
@@ -35,7 +35,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 ```
 
-  ![yum源配置](F:\typora_md\CentOS系统安装mongodb\yum源配置.png)
+  ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/yum源配置.png)
 
 做好yum源的配置后，下面就可以执行相关命令安装mongodb及相关服务了。
 
@@ -45,11 +45,11 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 运行命令：yum -y install mongodb-org
 
-![install1](F:\typora_md\CentOS系统安装mongodb\install1.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/install1.png)
 
-![install2](F:\typora_md\CentOS系统安装mongodb\install2.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/install2.png)
 
-![install3](F:\typora_md\CentOS系统安装mongodb\install3.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/install3.png)
 
 > 出现complete说明安装成功。
 
@@ -57,7 +57,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 运行命令：vi /etc/mongod.conf 查看修改相关配置
 
-![相关配置](F:\typora_md\CentOS系统安装mongodb\相关配置.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/相关配置.png)
 
 fork=true   允许程序在后台运行
 
@@ -84,9 +84,9 @@ port=27017，默认端口
 
 使用mongodb ： mongo 127.0.0.1:27017
 
-![进入mongo服务](F:\typora_md\CentOS系统安装mongodb\进入mongo服务.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/进入mongo服务.png)
 
-![测试](F:\typora_md\CentOS系统安装mongodb\测试.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/测试.png)
 
 停止mongod ：systemctl stop mongod,service
 
