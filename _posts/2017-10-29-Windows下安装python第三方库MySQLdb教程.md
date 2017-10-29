@@ -1,3 +1,14 @@
+---
+layout:     post
+title:  安装python第三方库MySQLdb教程
+subtitle: 含windows下安装mysql详细教程
+date: 2017-10-29
+author:     QC
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - MySQLdb
+---
 ### Windows下安装python第三方库MySQLdb教程
 
 > 做的项目中需要用到python的MySQLdb库，使用pip安装和下载下来之后使用`python setup.py install`命令安装此库都出现错误，遂才有了这篇记录安装教程的博客。
