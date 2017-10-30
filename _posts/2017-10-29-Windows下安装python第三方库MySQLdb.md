@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:  安装python第三方库MySQLdb教程
+title: 安装python第三方库MySQLdb教程
 subtitle: 含windows下安装mysql详细教程
 date: 2017-10-29
 author:     QC
