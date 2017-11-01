@@ -113,7 +113,7 @@ IP分配：
 >当然你也可以有机器3，机器4，机器5等等
 
 端口分配：
-
+```
 mongos:172.16.134.58:27017
 config:172.16.134.58:27001
 config:172.16.134.50:27001
@@ -123,13 +123,14 @@ shard3:172.16.134.58:27004
 shard4:172.16.134.50:27002
 shard5:172.16.134.50:27003
 shard6:172.16.134.50:27004
-
+```
 ##### 3.5 创建相关目录
 两台主机分别创建如下目录：
+```
 /home/XXXX/data/mongodb/config/data
 /home/XXXX/data/mongodb/config/log/
 /home/XXXX/data/mongodb/mongos/log
-
+```
 > XXXX为你主机的名字，每个主机不同，我两台机器创建的如下图：
 
 ![](https://i.imgur.com/o02ru1H.png)
@@ -138,9 +139,10 @@ shard6:172.16.134.50:27004
 
 两台主机分别创建分片目录：
 
+```
 /home/ubuntu/data/mongodb/shard0X/data
 /home/ubuntu/data/mongodb/shard0X/log
-
+```
 > 我这里每台主机创建3个分片，目录如下图：
 
 ![](https://i.imgur.com/YTYea6e.png)
