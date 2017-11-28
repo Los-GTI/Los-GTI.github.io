@@ -11,7 +11,7 @@ tags:
 ---
 #### Eclipse创建Maven web项目解决jre及web.xml版本问题
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\星爷.jpg)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/星爷.jpg)
 
 ##### 1.前言
 
@@ -46,25 +46,25 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 
 首先新建一个Maven Project，这里不再赘述，主要的截图如下：
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\newMavenPro.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/newMavenPro.png)
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\newMavenPro2.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/newMavenPro2.png)
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\newMavenPro3.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/newMavenPro3.png)
 
 新建的Maven项目的结构如下
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\项目结构.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/项目结构.png)
 
 可以看到出现了一个HttpServlet错误，我们先解决一下这个错误。
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\错误1.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/错误1.png)
 
 项目右击 `Properties` 选择`Java Build Path` 选择 `Add Library`添加 `Server Runtime` 选择 `Apache Tomcat7` 服务器（Tomcat8 需要 web版本3.1）
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\配置runserver.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/配置runserver.png)
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\错误解决.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/错误解决.png)
 
 HttpServlet错误解决，项目目录也有变化，自动补全` src/main/java`  和` src/test/java`  目录。
 
@@ -97,33 +97,33 @@ HttpServlet错误解决，项目目录也有变化，自动补全` src/main/java
 
 项目右击选择Maven `Update Project`项目的`Java Build Path`为:
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\修改jre版本.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/修改jre版本.png)
 
 jre版本修改已经完成，下面修改web.xml版本：
 
 这是默认生成的`web.xml`,可以看到是2.3版本的。
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\webXML23.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/webXML23.png)
 
 项目右击`Properties` 选择`Project Facets`（项目模板），如下图，可以看到`Dynamic Web Module`版本为 2.3
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\webXML232.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/webXML232.png)
 
 直接更改为3.0？，但是并不能更改
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\不能直接修改webXML.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/不能直接修改webXML.png)
 
 这里可以先把`Dynamic Web Module`**勾选去掉**，之后Apply。
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\勾去掉.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/勾去掉.png)
 
 **再接着勾选**`Dynamic Web Module`，注意下方出现`Further configuration available...`选项；接着更改为想要的版本 3.0，点击`Further configuration available...`
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\webXML修改1.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/webXML修改1.png)
 
 之后，修改 `Content director`为`src/main/webapp`,勾选`Generate web.xml deployment descriptor`OK，保存退出`Project Facets`
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\webXML修改2.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/webXML修改2.png)
 
 之后修改`src/main/webapp/WEB-INF/web.xml`文件,头信息版本修改为 3.0 版本的。
 
@@ -137,7 +137,7 @@ jre版本修改已经完成，下面修改web.xml版本：
 
 之后，项目右击选择Maven `Update Project`。项目结构为：
 
-![](F:\typora_md\Eclipse使用Maven创建SSM项目解决jre和web.xml版本\最终项目结构.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/最终项目结构.png)
 
 到这就大功告成了，jre和web.xml版本的升级完成，接下来你就开开心心撸代码吧！！！
 
