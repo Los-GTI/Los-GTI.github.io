@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      解决向Tomcat服务器发送PUT和DELETE请求一直报403错误的问题
-subtitle:   PUT和DELETE请求
+title:  解决向Tomcat服务器发送PUT和DELETE请求一直报403错误的问题
+subtitle: PUT和DELETE请求
 date:       2017-12-16
 author:     QC
 header-img: img/post-bg-ios9-web.jpg
