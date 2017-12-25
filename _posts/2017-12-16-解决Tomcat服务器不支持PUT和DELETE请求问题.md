@@ -1,3 +1,15 @@
+---
+layout:     post
+title:  向Tomcat服务器发送PUT和DELETE请求一直报403错误的问题
+subtitle: PUT和DELETE请求
+date:       2017-12-16
+author:     QC
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Tomact
+---
+
 #### 向Tomcat服务器发送PUT和DELETE请求一直报403错误的解决方法
 
 > 前言：我在做修改功能的时候向tomact服务器发送了PUT请求，一直报403拒绝访问错误。搞了半天不知道怎么回事，后来才知道tomact默认就不支持PUT和DELETE请求，下面我提供一下解决这个问题的方法，让tomcat服务器支持PUT和DELETE请求。
