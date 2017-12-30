@@ -39,30 +39,30 @@ yum install qcc-c++
 ###### 1.3 卸载机器上自带的jdk
 
 检查本机上是否携带jdk，发现本机上携带openjdk，我们在windows上安装的jdk1.7啊jdk1.8啊都属于Oracle jdk，这两个jdk只有版权的区别，基本一样。你如果想直接使用自带的jdk也是没有问题的，因为我需要手动的部署一下Java环境的安装，所以我们在装jdk之前将原有版本的jdk删掉。
-![Alt text](./openjdk.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/openjdk.png)
 
 上图可以看到我们机器上自带了openjdk，下面我们把他删掉然后重新安装jdk。删除之后效果图如下：
 
-![Alt text](./卸载jdk.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/卸载jdk.png)
 
 ###### 1.4  安装jdk
 
 因为我下载的jdk文件是压缩包，首先将其解压，我把它解压到/usr/local/java文件夹下，如下图（解压之前先创建/usr/local/java文件夹）：
 新建文件夹命令：`mkdir -p /usr/local/java`
 
-![Alt text](./解压成功.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/jdk解压成功.png)
 
 下面查看一下解压后的Java文件夹中的目录，如下图可以看到和我们在windows上的目录没什么区别：
 
-![Alt text](./解压后目录.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/解压后目录.png)
 
 可以看到我们已经解压成功了，下面去配置环境变量，centos系统的环境变量配置在/etc/profile,我们使用`vim /etc/profile`命令配置环境变量
 
-![Alt text](./设置环境变量.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/设置环境变量.png)
 
 然后用`source /etc/profile`重新加载配置文件，然后我们检验一下Java环境有没有安装成功。命令`java -version`
 
-![Alt text](./javaVersion.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/javaVersion.png)
 
 如上图我们输入`java -version`命令可以看到我们的java的版本号，说明我们的jdk安装配置成功了。
 
