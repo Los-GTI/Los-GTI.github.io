@@ -38,7 +38,10 @@ yum install qcc-c++
 
 ###### 1.3 卸载机器上自带的jdk
 
-检查本机上是否携带jdk，发现本机上携带openjdk，我们在windows上安装的jdk1.7啊jdk1.8啊都属于Oracle jdk，这两个jdk只有版权的区别，基本一样。你如果想直接使用自带的jdk也是没有问题的，因为我需要手动的部署一下Java环境的安装，所以我们在装jdk之前将原有版本的jdk删掉。
+检查本机上是否携带jdk，发现本机上携带openjdk，我们在windows上安装的jdk1.7啊jdk1.8啊都属于Oracle jdk，这两个jdk只有版权的区别，基本一样。
+你如果想直接使用自带的jdk也是没有问题的.
+> 因为我需要手动的部署一下Java环境的安装，所以我们在装jdk之前将原有版本的jdk删掉。
+
 ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/openjdk.png)
 
 上图可以看到我们机器上自带了openjdk，下面我们把他删掉然后重新安装jdk。删除之后效果图如下：
