@@ -18,28 +18,28 @@ tags:
 centOS7和centOS7.1系统中，默认安装的是它的分支mariadb数据库，以前我们在centOS6中安装mysql的许多操作都是无效的。首先我们先把centOS7中默认安装的mariadb数据库卸载(用以下命令)：
 `yum remove mariadb*`
 卸载完成后如下图：
-![Alt text](./卸载mariadb.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/卸载mariadb.png)
 
 ##### 3.mysql数据库安装
 ###### 3.1 下载mysql的repo源
 CentOS7的yum源中默认是没有mysql的。为了解决这个问题，我们首先要先下载mysql的repo源：`wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
 
-![Alt text](./添加mysqlrepo源.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/添加mysqlrepo源.png)
 ###### 3.2 安装mysql-community-release-el7-5.noarch.rpm包
 命令：`sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm`
-![Alt text](./安装mysqlrpm包.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/安装mysqlrpm包.png)
 
 安装这个包后，会获得两个mysql的yum repo源：/etc/yum.repos.d/mysql-community.repo，/etc/yum.repos.d/mysql-community-source.repo（如下图）。
-![Alt text](./多两个mysqlrepo源.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/多两个mysqlrepo源.png)
 ###### 3.3 安装mysql
 命令：`sudo yum install mysql-server`
 根据步骤安装就可以了，不过安装完成后，没有密码，需要重置密码。
-![Alt text](./mysql安装成功.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/mysql安装成功.png)
 ###### 3.4 重置密码
 首先启动mysql：`service mysql start`
 重置密码前首先要登录：`mysql -u root -p`
 这时候登录是没有密码的，所以我们要修改一下密码：
-![Alt text](./mysql无密码登录.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/mysql无密码登录.png)
 ```
 mysqladmin -u root password 'root'
 ```
@@ -56,7 +56,7 @@ CentOS7这个版本的防火墙默认使用的是firewall，与之前的版本�
 - 4、修改防火墙配置文件：`vi /etc/sysconfig/iptables `
 - 5、加入端口配置，开放3306端口：
 `-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT`
-![Alt text](./新增3306端口.png)
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/新增3306端口.png)
 - 6、重新加载规则：`service iptables restart  `
 > 这样配置完成后发现还是远程连接不了，然后继续配置！
 
