@@ -62,6 +62,15 @@ kramdown:
 # Share component is depend on Comment so we can NOT use share only.
 # duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: 35f2bfe586b7f7d613de   #生成的clientID
+  clientSecret: cd4b58aff88823ea3b735f56f644554c71af0baf  #同上
+  repo: Los-GTI.github.io    #仓库名称
+  owner: Los-GTI    #github用户名
+  admin: Los-GTI
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 
