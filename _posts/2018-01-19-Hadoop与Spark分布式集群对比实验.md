@@ -3,7 +3,7 @@ layout:     post
 title:      Hadoop与Spark分布式集群对比实验
 subtitle:   附实例
 date:       2018-01-19
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -318,4 +318,4 @@ counts.saveAsTextFile(out_file_name)
 > 这篇博客的内容是我一门叫做并行分布式计算的课的作业，我完成的过程中也踩了不少坑，这里分享给大家！
 
 
-> 摁钉 author by chongqin
+> 摁钉 author by Los-GTI
