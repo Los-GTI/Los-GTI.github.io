@@ -3,7 +3,7 @@ layout:     post
 title:      RIP for JeremyLin
 subtitle:   为我Lin祈福
 date:       2017-10-19
-author:     QC
+author:    Los-GTI
 header-img: img/Lin2.jpeg
 catalog: true
 tags:
