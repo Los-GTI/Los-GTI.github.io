@@ -3,7 +3,7 @@ layout:     post
 title: 安装python第三方库MySQLdb教程
 subtitle: 含windows下安装mysql详细教程
 date: 2017-10-29
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -114,4 +114,4 @@ http://dev.mysql.com/downloads/connectorc/6.0.html#downloads
 
 > 下面开开心心的开启新一轮爬虫之旅吧！！！
 
-> 摁钉 author by qinchong
+> 摁钉 author by Los-GTI
