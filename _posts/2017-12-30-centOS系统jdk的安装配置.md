@@ -3,7 +3,7 @@ layout:     post
 title:  centOS7系统jdk的安装与配置
 subtitle:  centOS7,jdk
 date:       2017-12-30
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -69,4 +69,4 @@ yum install qcc-c++
 
 如上图我们输入`java -version`命令可以看到我们的java的版本号，说明我们的jdk安装配置成功了。
 
-> 摁钉：author by chongqin.
+> 摁钉：author by Los-GTI
