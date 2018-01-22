@@ -3,7 +3,7 @@ layout:     post
 title: spring注解
 subtitle:   @controller、@RequestMapping
 date:       2017-10-18
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -296,4 +296,4 @@ public class RelativePathUriTemplateController {
 
 上面仅仅介绍了，RequestMapping指定的方法处理哪些请求，下面一篇将讲解怎样处理request提交的数据（数据绑定）和返回的数据。
 
-> 摁钉：author：chong qin
+> 摁钉：author：chong Los-GTI
