@@ -3,7 +3,7 @@ layout:     post
 title:      CentOS下搭建mongodb集群
 subtitle:   CentOS7系统虚拟机两台
 date:       2017-11-01
-author:     QC
+author:     Los-GTI
 header-img: img/timg6.jpg
 catalog: true
 tags:
@@ -260,7 +260,7 @@ shard05:160条
 
 由上面的分片结果可以看出我们分片成功！喜大普奔！！！
 
-> 摁钉 author by chongqin
+> 摁钉 author by Los-GTI
 
 
 
