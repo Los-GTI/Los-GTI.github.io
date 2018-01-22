@@ -3,7 +3,7 @@ layout:     post
 title:  Eclipse使用Maven创建SSM项目升级jre和web.xml版本
 subtitle:   Eclipse，Maven，SSM
 date:       2017-11-28
-author:     QC
+author:     Los-GTI
 header-img: img/home-bg-geek.jpg
 catalog: true
 tags:
@@ -141,4 +141,4 @@ jre版本修改已经完成，下面修改web.xml版本：
 
 到这就大功告成了，jre和web.xml版本的升级完成，接下来你就开开心心撸代码吧！！！
 
-> 摁钉 author by chongqin
+> 摁钉 author by Los-GTI
