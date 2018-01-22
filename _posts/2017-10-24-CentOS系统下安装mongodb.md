@@ -3,7 +3,7 @@ layout:     post
 title:      CentOS系统利用yum源安装mongdb数据库
 subtitle: 系统版本CentOS7
 date:       2017-10-24
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -90,7 +90,7 @@ port=27017，默认端口
 
 停止mongod ：systemctl stop mongod,service
 
-> 摁钉： author ：chongqin
+> 摁钉： author ：Los-GTI
 
 
 
