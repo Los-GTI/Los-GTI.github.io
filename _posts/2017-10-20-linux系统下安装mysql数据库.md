@@ -3,7 +3,7 @@ layout:     post
 title:      Linux系统安装MySQL数据库
 subtitle:   Ubuntu14.04系统
 date:       2017-10-20
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -50,4 +50,4 @@ MySQL是Oracle公司的一种开放源代码的关系型数据库系统，被广
 
 ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/installMysql8.png) 
 
-> 摁钉：大功告成。 author:chong qin
+> 摁钉：大功告成。 author:Los-GTI
