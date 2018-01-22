@@ -3,7 +3,7 @@ layout:     post
 title: python脚本运行
 subtitle: IndentationError错误解决办法
 date:       2017-10-29
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -29,4 +29,4 @@ tags:
 
 遇到IdentationError,应该立即想到应该是Tab键和空格键混用的问题，大部分人应该都是这个问题，遇到问题后逐一排查，最后解决问题。
 
-> 摁钉 author by qinchong
+> 摁钉 author by Los-GTI
