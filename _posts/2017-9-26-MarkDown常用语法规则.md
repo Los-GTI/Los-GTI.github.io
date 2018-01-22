@@ -3,7 +3,7 @@ layout:     post
 title: MarkDown常用语法规则 
 subtitle:   MarkDown常用指令
 date:       2017-09-26              
-author:     QC                      
+author:     Los-GTI                     
 header-img: img/post-bg-2015.jpg    
 catalog: true                       # 是否归档
 tags:                               #标签
