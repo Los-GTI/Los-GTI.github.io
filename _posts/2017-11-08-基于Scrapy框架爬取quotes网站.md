@@ -3,7 +3,7 @@ layout:     post
 title:  基于Scrapy框架爬取quotes网站
 subtitle:   爬虫实例基于Scrapy框架
 date:       2017-11-08
-author:     QC
+author:    Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -183,5 +183,5 @@ class ToScrapeSpiderXPath(scrapy.Spider):
 
 ![](https://i.imgur.com/LFCtuUW.png)
 
-> 摁钉 author by chongqin
+> 摁钉 author by Los-GTI
 
