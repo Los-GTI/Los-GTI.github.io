@@ -3,7 +3,7 @@ layout:     post
 title:  向Tomcat服务器发送PUT和DELETE请求一直报403错误的问题
 subtitle: PUT和DELETE请求
 date:       2017-12-16
-author:     QC
+author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -29,4 +29,4 @@ readonly参数默认是true，即不允许delete和put操作，所以通过XMLHt
 
 完美解决！！！
 
-摁钉：author by chongqin
+摁钉：author by Los-GTI
