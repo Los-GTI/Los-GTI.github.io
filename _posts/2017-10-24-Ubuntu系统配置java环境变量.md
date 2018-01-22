@@ -3,7 +3,7 @@ layout:     post
 title:      Ubuntu系统配置Java环境变量
 subtitle:   Ubuntu系统版本:14.0.1
 date:       2017-10-24
-author:     QC
+author:     Los-GTI
 header-img: img/timg12.jpg
 catalog: true
 tags:
@@ -45,4 +45,4 @@ tags:
 ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/测试1.png) 
 ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/java环境测试2.png) 
 
-> 摁钉： author chongqin
+> 摁钉： author Los-GTI
