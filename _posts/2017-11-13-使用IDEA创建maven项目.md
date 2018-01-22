@@ -3,7 +3,7 @@ layout:     post
 title:      使用InetlliJ IDEA创建maven项目
 subtitle:   IDEA-maven
 date:       2017-11-13
-author:     QC
+author:     Los-GTI
 header-img: img/home-bg-art.jpg
 catalog: true
 tags:
@@ -71,4 +71,4 @@ run
 ![](https://i.imgur.com/42dcU0o.png)
 
 > 熟悉的hello world
-> 摁钉 author by chongqin
+> 摁钉 author by Los-GTI
