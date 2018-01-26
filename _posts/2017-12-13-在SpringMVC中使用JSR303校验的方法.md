@@ -7,7 +7,7 @@ author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - JSR303
+    - Java
 ---
 
 #### 1.前言
