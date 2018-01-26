@@ -7,7 +7,7 @@ author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - MySQLdb
+    - Python
 ---
 ### Windows下安装python第三方库MySQLdb教程
 
