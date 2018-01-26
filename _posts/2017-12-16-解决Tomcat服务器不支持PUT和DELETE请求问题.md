@@ -7,7 +7,7 @@ author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - Tomact
+    - Java
 ---
 
 #### 向Tomcat服务器发送PUT和DELETE请求一直报403错误的解决方法
