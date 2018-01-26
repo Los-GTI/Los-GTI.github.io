@@ -7,7 +7,7 @@ author:     Los-GTI
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - python
+    - Python
 ---
 ### Python脚本运行出现语法错误：IndentationError: unindent does not match any outer indentation level
 
