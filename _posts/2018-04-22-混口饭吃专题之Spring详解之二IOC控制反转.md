@@ -1,0 +1,411 @@
+---
+layout:     post
+title:      混口饭吃专题之Spring详解之二IOC控制反转
+subtitle:   Spring复习系列之二IOC控制反转
+date:       2018-04-22
+author:     Los-GTI
+header-img: img/ms1.jpg
+catalog: true
+tags:
+    - 混口饭吃
+---
+
+### Spring详解（二）------ IOC控制反转
+
+　我相信提到 Spring，很多人会脱口而出IOC（控制反转）、DI（依赖注入）、AOP等等概念，这些概念也是面试官经常问到的知识点。那么这篇博客我们就来详细的讲解 IOC控制反转。
+　
+#### 1.什么是IOC?
+
+IOC - Inversion of Control,即控制反转。它不是什么技术，而是一种设计思想。
+
+传统的创建对象的方法是直接通过**new 关键字**，而Spring则是通过IOC容器来创建对象，也就是说我们将创建对象的控制权交给了IOC容器。我们可以用一句话来概括IOC：
+
+**IOC让程序员不再关注怎么去创建对象，而是关注于对象创建之后的操作，把对象的创建、初始化、销毁等工作交给spring容器来做。**
+
+#### 2.对IOC和DI浅显易懂的理解
+
+IOC（Inversion Of Control,控制反转）。这是Spring的核心，贯穿始终。就是由spring来负责控制对象的生命周期和对象间的关系。这是什么意思呢，举个简单的例子，我们是如何找女朋友的？常见的情况是，我们到处去看哪里有长得漂亮身材又好的mm，然后打听她们的兴趣爱好、qq号、电话号、ip号、iq号………，想办法认识她们，投其所好送其所要，然后嘿嘿……这个过程是复杂深奥的，我们必须自己设计和面对每个环节。传统的程序开发也是如此，在一个对象中，如果要使用另外的对象，就必须得到它（自己new一个，或者从JNDI中查询一个），使用完之后还要将对象销毁（比如Connection等），对象始终会和其他的接口或类藕合起来。
+
+　　那么IoC是如何做的呢？有点像通过婚介找女朋友，在我和女朋友之间引入了一个第三者：婚姻介绍所。婚介管理了很多男男女女的资料，我可以向婚介提出一个列表，告诉它我想找个什么样的女朋友，比如长得像李嘉欣，身材像林熙雷，唱歌像周杰伦，速度像卡洛斯，技术像齐达内之类的，然后婚介就会按照我们的要求，提供一个mm，我们只需要去和她谈恋爱、结婚就行了。简单明了，如果婚介给我们的人选不符合要求，我们就会抛出异常。整个过程不再由我自己控制，而是有婚介这样一个类似容器的机构来控制。Spring所倡导的开发方式就是如此，所有的类都会在spring容器中登记，告诉spring你是个什么东西，你需要什么东西，然后spring会在系统运行到适当的时候，把你要的东西主动给你，同时也把你交给其他需要你的东西。**所有的类的创建、销毁都由 spring来控制，也就是说控制对象生存周期的不再是引用它的对象，而是spring。对于某个具体的对象而言，以前是它控制其他对象，现在是所有对象都被spring控制，所以这叫控制反转。**
+
+#### 3.Spring容器创建对象的三种方式
+
+##### 3.1 第一种：利用默认的构造方法
+
+**创建工程，目录结构如下所示：IDEA创建**
+
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/spring/Spring2_1.png)
+
+**创建测试对象HelloIoc：**
+```
+package com.qc.ioc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * @ Description:
+ * @ Author: Chong Qin.
+ * @ Date: Created in 2018/4/22,13:34
+ */
+public class HelloIoc {
+
+    public void sayHello(){
+        System.out.println("Hello Ioc");
+    }
+
+	//Spring容器利用构造函数创建对象
+    public static void testCreatObjectByConstrutor(){
+        //1.启动Spring容器
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //2.从Spring容器中取出数据
+        HelloIoc helloIoc = (HelloIoc) context.getBean("HelloIoc");
+        //3.通过对象调用方法
+        helloIoc.sayHello();
+
+        //利用配置文件alias别名属性创建对象
+        HelloIoc helloIoc2 = (HelloIoc) context.getBean("HelloIoc2");
+        helloIoc2.sayHello();
+    }
+    public static void main(String[] args){
+        testCreatObjectByConstrutor();
+    }
+}
+```
+
+**传统的创建对象的方法：new 关键字**
+
+```
+public void testTradition(){
+	HelloIoc helloIoc = new HelloIoc()；
+	helloToc.sayHello();
+}
+```
+> 以上是传统的创建对象的方法，那么我们通过Spring容器怎么来创建呢？下面第一种方法是利用默认的构造方法创建；
+
+**在src目录下新建applicationContext.xml文件，这是Spring配置文件，添加如下代码：**
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 创建对象的第一种方式：利用无参构造器
+    id：唯一标识符
+    class：类的全类名
+    -->
+    <bean id="HelloIoc" class="com.qc.ioc.HelloIoc"></bean>
+    <!-- 别名属性 name:和bean的id属性对应 -->
+    <alias name="HelloIoc" alias="HelloIoc2" />
+</beans>
+```
+**运行结果如下：**
+
+```
+Hello Ioc
+Hello Ioc
+```
+> 我们可以在测试类 HelloIoc.java 中手动添加无参的构造方法，然后执行上面的测试代码，会发现构造方法会在 sayHello()方法执行之前调用。
+
+##### 3.2 第二种方法：利用静态工厂方法
+
+**首先创建静态工厂类HelloStaticFactory.java**
+
+```
+package com.qc.ioc;
+
+/**
+ * @ Description:
+ * @ Author: Chong Qin.
+ * @ Date: Created in 2018/4/22,16:10
+ */
+public class HelloStaticFactory {
+
+    public HelloStaticFactory(){
+        System.out.println("HelloStaticFactory constructor");
+    }
+    //静态工厂方法
+    public static HelloIoc getInstances(){
+        return new HelloIoc();
+    }
+}
+```
+
+**接着在applicationContext.xml中进行如下配置：**
+
+```
+<!-- 创建对象的第二种方式：利用静态工厂方法
+    factory-method:静态工厂类的获取对象的静态方法
+    class:静态工厂类的全类名
+    -->
+    <bean id="helloStaticFactory" class="com.qc.ioc.HelloStaticFactory" factory-method="getInstances"></bean>
+```
+
+**最后是在测试类中编写如下代码：我直接在HelloIoc中添加的**
+
+```
+public static void testCreatObjectStaticFactory(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloIoc staticFactory=(HelloIoc) context.getBean("helloStaticFactory");
+        staticFactory.sayHello();
+    }
+    public static void main(String[] args){
+        //testCreatObjectByConstrutor();
+        testCreatObjectStaticFactory();
+    }
+```
+
+**运行结果：**
+
+```
+Hello Ioc
+```
+
+> 注意：spring容器只负责调用静态工厂方法，而这个静态工厂方法内部实现由程序员完成
+
+##### 3.3 第三种方法：利用实例工厂方法
+
+**首先创建实例工厂类HelloInstanceFactory.java**
+
+```
+package com.qc.ioc;
+
+/**
+ * @ Description:
+ * @ Author: Chong Qin.
+ * @ Date: Created in 2018/4/22,16:30
+ */
+public class HelloInstanceFactory {
+
+    public HelloInstanceFactory(){
+        System.out.println("实例工厂方法构造函数");
+    }
+
+    //实例工厂创建对象
+    public HelloIoc getInstance(){
+        HelloIoc helloIoc = new HelloIoc();
+        return helloIoc;
+    }
+}
+```
+
+**在applicationContext.xml配置文件中添加如下内容：**
+
+```
+<!-- 创建对象的第三种方式：利用实例工厂方法
+    factory-bean:指定当前Spring中包含工厂方法的beanID
+    factory-method:工厂方法名称
+    -->
+    <bean id="instanceFactory" class="com.qc.ioc.HelloInstanceFactory"></bean>
+    <bean id="instance" factory-bean="instanceFactory" factory-method="getInstance"></bean>
+```
+
+**编写测试类：这里我直接在HelloIoc中编写的**
+
+```
+public static void testCreateObjectInstanceFactory(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloIoc instanceFactory = (HelloIoc) context.getBean("instance");
+        instanceFactory.sayHello();
+    }
+    public static void main(String[] args){
+        //testCreatObjectByConstrutor();
+        //testCreatObjectStaticFactory();
+        testCreateObjectInstanceFactory();
+    }
+```
+
+**运行结果：**
+
+```
+实例工厂方法构造函数
+Hello Ioc
+```
+
+#### 4.Spring容器创建对象的时机
+
+##### 4.1 第一种：默认情况下，启动Spring容器便创建对象（遇见bean便创建对象）
+
+测试：第一步：我们在HelloIoc.java中添加默认构造方法：
+
+```
+//默认无参构造函数
+    public HelloIoc(){
+        System.out.println("HelloIoc default constructor");
+    }
+    public void sayHello(){
+        System.out.println("Hello Ioc");
+    }
+```
+
+第二步：在 applicationContext.xml 文件中添加 bean（由于上面我们通过三种方式来创建对象了，里面已经有三个bean了）
+第三步：启动Spring容器，查看无参构造函数的打印次数
+控制台打印结果如下：
+```
+HelloIoc default constructor
+HelloIoc default constructor
+实例工厂方法构造函数
+HelloIoc default constructor
+```
+
+##### 4.2 第二种：在Spring的配置文件bean中有一个属性lazy-init="default/true/false"
+- 如果lazy-init为"default/false"在启动Spring容器时创建对象（默认情况）
+- 如果lazy-init为"true",在context.getBean时才创建对象
+
+我们测试lazy-init="true"的情况：
+
+```
+<!-- 创建对象的第一种方式：利用无参构造器
+    id：唯一标识符
+    class：类的全类名
+    -->
+    <bean id="HelloIoc" class="com.qc.ioc.HelloIoc" lazy-init="true"></bean>
+```
+
+我们测试的时候通过断点调试：
+
+```
+ public static void testCreatObjectByConstrutor(){
+        //1.启动Spring容器
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //2.从Spring容器中取出数据
+        HelloIoc helloIoc = (HelloIoc) context.getBean("HelloIoc"); //在这行加断点
+        //3.通过对象调用方法
+        helloIoc.sayHello();
+
+        //利用配置文件alias别名属性创建对象
+        HelloIoc helloIoc2 = (HelloIoc) context.getBean("HelloIoc2");
+        helloIoc2.sayHello();
+    }
+```
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/spring/Spring2_2.png)
+
+然后继续往下执行：当lazy-init="true"时，我们执行getBean()方法，Spring容器才会去创建对象；
+
+![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/spring/Spring2_3.png)
+
+**总结：在第一种情况下可以在启动spring容器的时候，检查spring容器配置文件的正确性，如果再结合tomcat,如果spring容器不能正常启动，整个tomcat就不能正常启动。但是这样的缺点是把一些bean过早的放在了内存中，如果有数据，则对内存来是一个消耗；反过来，在第二种情况下，可以减少内存的消耗，但是不容易发现错误**
+
+#### 5.Spring的bean中的scope:"singleton/prototype/request/session/global session"
+
+> 单例和多例的区别：所谓单例就是所有的请求都用一个对象来处理，比如我们常用的service和dao层的对象通常都是单例的，而多例是指每个请求都用一个新的对象来处理，比如action;
+
+##### 5.1 默认scope的值是singleton,即产生的对象时单例的;
+applicationContext.xml文件中配置：
+
+```
+<bean id="HelloIoc" scope="singleton" class="com.qc.ioc.HelloIoc"></bean>
+```
+
+验证：
+
+```
+//spring 容器默认产生对象是单例的 scope="singleton"
+    @Test
+    public void test_scope_single_CreateObject(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloIoc hello1 = (HelloIoc)context.getBean("HelloIoc");
+        HelloIoc hello2 = (HelloIoc)context.getBean("HelloIoc");
+        System.out.println(hello1.equals(hello2)); //true
+    }
+```
+
+##### 5.2 scope = "prototype":多例模式，并且在Spring容器启动的时候并不会创建对象，而是得到bean的时候才会创建对象；
+
+applicationContext.xml文件中配置：
+
+```
+<bean id="HelloIoc" scope="prototype" class="com.qc.ioc.HelloIoc"></bean>
+```
+
+验证：
+```
+//spring 容器默认产生对象是单例的 scope="prototype"
+    @Test
+    public void test_scope_prototype_CreateObject(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloIoc hello1 = (HelloIoc)context.getBean("HelloIoc");
+        HelloIoc hello2 = (HelloIoc)context.getBean("HelloIoc");
+        System.out.println(hello1.equals(hello2)); //false
+    }
+```
+**总结：在单例模式下，启动Spring容器，便会创建对象；在多例模式下，启动容器并不会创建对象，获得bean的时候才会创建对象；**
+
+#### 6.Spring容器生命周期
+
+创建SpringLifeCycle.java
+
+```
+package com.qc.ioc;
+
+/**
+ * @ Description:
+ * @ Author: Chong Qin.
+ * @ Date: Created in 2018/4/22,19:04
+ */
+public class SpringLifeCycle {
+    public SpringLifeCycle(){
+        System.out.println("SpringLifeCycle");
+    }
+    //定义初始化方法
+    public void init(){
+        System.out.println("init...");
+    }
+    //定义销毁方法
+    public void destroy(){
+        System.out.println("destroy...");
+    }
+    public void sayHello(){
+        System.out.println("say hello...");
+    }
+}
+```
+
+applicationContext.xml配置文件：
+
+```
+<!-- 生命周期 -->
+    <bean id="springLifeCycle" init-method="init" destroy-method="destroy" class="com.qc.ioc.SpringLifeCycle"></bean>
+```
+
+测试：我直接在HelloIoc中编写
+
+```
+/**
+     * Spring容器的初始化和销毁
+     */
+    public static void testSpringLifeCycle(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        SpringLifeCycle hello = (SpringLifeCycle)context.getBean("springLifeCycle");
+
+        hello.sayHello();
+
+        //销毁Spring容器
+        ClassPathXmlApplicationContext classContext= (ClassPathXmlApplicationContext) context;
+        classContext.close();
+    }
+    public static void main(String[] args){
+        testSpringLifeCycle();
+    }
+}
+```
+
+运行结果：
+
+```
+SpringLifeCycle
+init...
+say hello...
+四月 22, 2018 7:13:06 下午 org.springframework.context.support.ClassPathXmlApplicationContext doClose
+信息: Closing org.springframework.context.support.ClassPathXmlApplicationContext@27fa135a: startup date [Sun Apr 22 19:13:06 CST 2018]; root of context hierarchy
+destroy...
+```
+
+**分析：Spring容器的生命周期**
+- 1.Spring容器创建对象；
+- 2.执行init方法；
+- 3.调用自己的方法；
+- 4.当Spring容器关闭的时候执行destroy方法；
+
+**注意：当scope为"prototype"时，调用 close（） 方法时是不会调用 destroy 方法的**
