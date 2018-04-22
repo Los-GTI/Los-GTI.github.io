@@ -37,6 +37,7 @@ IOC（Inversion Of Control,控制反转）。这是Spring的核心，贯穿始�
 ![](https://raw.githubusercontent.com/Los-GTI/Los-GTI.github.io/master/img/spring/Spring2_1.png)
 
 **创建测试对象HelloIoc：**
+
 ```
 package com.qc.ioc;
 
