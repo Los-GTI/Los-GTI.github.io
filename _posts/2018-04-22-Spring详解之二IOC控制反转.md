@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      混口饭吃专题之Spring详解之二IOC控制反转
+title:      Spring详解之二IOC控制反转
 subtitle:   Spring复习系列之二IOC控制反转
 date:       2018-04-22
 author:     Los-GTI
 header-img: img/ms1.jpg
 catalog: true
 tags:
-    - 混口饭吃
+    - Spring
 ---
 
 ### Spring详解（二）------ IOC控制反转
