@@ -2,7 +2,7 @@
 layout:     post
 title:      Spring详解之二IOC控制反转
 subtitle:   Spring复习系列之二IOC控制反转
-date:       2018-04-22
+date:       2018-4-22
 author:     Los-GTI
 header-img: img/ms1.jpg
 catalog: true
