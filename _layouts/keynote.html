@@ -127,7 +127,7 @@ layout: default
                     repo: '{{site.gitalk.repo}}',
                     owner: '{{site.gitalk.owner}}',
                     admin: ['{{site.gitalk.admin}}'],
-                    id: md5(window.location.pathname),
+                    id: md5(location.href),
                     });
                     gitalk.render('gitalk-container');
                 </script>
@@ -195,7 +195,7 @@ layout: default
     </div>
 </article>
 
-<script src="https://github.com/blueimp/JavaScript-MD5/js/md5.min.js"></script>
+<script src="{{ site.baseurl }}/js/md5.min.js"></script>
 <!-- resize header to fullscreen keynotes -->
 <script>
     var $header = document.getElementsByTagName("header")[0];
