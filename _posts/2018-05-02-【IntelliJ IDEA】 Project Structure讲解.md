@@ -1,6 +1,6 @@
 ---
 layout:     post
-title: 【IntelliJ IDEA】 Project Structure讲解
+title: IntelliJ IDEA Project Structure讲解
 subtitle: Project Structure讲解
 date:       2018-05-02
 author:     Los-GTI
